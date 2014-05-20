@@ -7,6 +7,8 @@ work() {
 
     DEBIAN_FRONTEND=noninteractive apt-get -y install git vim-nox
     DEBIAN_FRONTEND=noninteractive apt-get -y install beanstalkd
+
+    echo "START=yes" >> /etc/default/beanstalkd
 }
 
 work
