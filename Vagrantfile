@@ -9,6 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provider :docker do |docker, override|
         docker.image = "fgrehm/vagrant-ubuntu:precise"
         docker.has_ssh = true
+        docker.ports = ["11300:11300"]
         override.ssh.port = 22
     end
 
