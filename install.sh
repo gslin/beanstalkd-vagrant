@@ -9,6 +9,8 @@ work() {
     DEBIAN_FRONTEND=noninteractive apt-get -y install beanstalkd
 
     echo "START=yes" >> /etc/default/beanstalkd
+
+    service beanstalkd start
 }
 
 work
