@@ -8,9 +8,9 @@ work() {
     DEBIAN_FRONTEND=noninteractive apt-get -y install git vim-nox
     DEBIAN_FRONTEND=noninteractive apt-get -y install beanstalkd
 
-    cat <<"EOF"
+    cat >> /etc/default/beanstalkd <<"EOF"
 START=yes
-DAEMON_OPTS+="${DAEMON_OPTS} -b /var/lib/beanstalkd"
+DAEMON_OPTS="${DAEMON_OPTS} -b /var/lib/beanstalkd"
 EOF
 
     service beanstalkd start
